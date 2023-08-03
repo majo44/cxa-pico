@@ -1,0 +1,231 @@
+html, body {
+    background-color: #2A2D36;
+    font-family: "Rubik", "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #ddd;
+}
+
+button {
+    color: #ddd;
+    font-family: "Rubik", "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    font-weight: 600;
+    background: linear-gradient(320deg, #393b42 0%, #2A2D36 100%);
+    border:  1px solid #393b42;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.2);
+    cursor: pointer;
+}
+
+button:disabled {
+    box-shadow: none;
+    opacity: .3;
+    background: none;
+}
+
+button span {
+    transition: text-shadow, color;
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48
+}
+
+button.on {
+    color: #6fb361;
+}
+
+button.on span {
+    font-variation-settings: 'wght' 600;
+}
+
+button.click {
+    text-shadow: 0 0 5px;
+    box-shadow: none;
+    background: linear-gradient(320deg, #45474f 0%, #23252d 100%);
+}
+
+button.click span {
+    position: relative;
+    top: 1px;
+    left: 1px;
+}
+
+header {
+    position: absolute;
+    margin: auto;
+    max-width: 400px;
+    top: .5rem;
+    right: .5rem;
+    left: .5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 1rem;
+    justify-items: center;
+    align-items: center;
+}
+
+header button {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+}
+
+header button span {
+    font-size:32px;
+}
+
+header .logo {
+    font-weight: 600;
+    background: -webkit-linear-gradient(#ddd, #666);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header .logo span:first-child {
+    font-size: 45px;
+}
+
+main {
+    position: absolute;
+    top: 100px;
+    bottom: 50px;
+    left: 1.5rem;
+    right: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    row-gap: 10px;
+    max-height: 480px;
+    max-width: 380px;
+    margin: auto;
+}
+
+main .volume {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 3.5rem;
+}
+
+main .volume button {
+    width: 140px;
+    height: 140px;
+    border-radius: 140px;
+    color: #ddd;
+    font-weight: 100;
+}
+
+main .volume button span {
+    font-size: 60px;
+    font-variation-settings: 'wght' 200;
+}
+
+main .source {
+    background-color: #1d1f25;
+    border-radius: 10px;
+    position: relative;
+}
+
+main .source .label {
+    display: inline-block;
+    background-color: #1d1f25;
+    border-radius: 10px;
+    padding: 10px 15px 15px 15px;
+    position: absolute;
+    top: -30px;
+    margin-bottom: -15px;
+    font-weight: 600;
+}
+
+main .source .grid {
+    z-index: 1;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 10px;
+    gap: 10px;
+    height: calc(100% - 20px);
+}
+
+main .source button {
+    border-radius: 10px;
+    border: none;
+    background: none;
+    color: #5e6065;
+}
+
+main .source button.on {
+    background: linear-gradient(320deg, #393b42 0%, #2A2D36 100%);
+    box-shadow: 2px 2px 15px rgba(0,0,0,.4);
+    color: #6fb361;
+}
+
+footer {
+    font-size: 12px;
+    position: absolute;
+    margin: auto;
+    max-width: 400px;
+    bottom: .5rem;
+    right: .5rem;
+    left: .5rem;
+    padding: 1rem;
+    background: rgba(55, 55, 63, 0.6);
+    border: 1px solid rgba(141, 141, 150, 0.07);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    border-radius: .75rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+footer .rp {
+    vertical-align: bottom;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background-image: url("/public/rp.png");
+    background-size: contain;
+}
+
+body.loading .indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 2px;
+    background: white;
+    animation: indicator 3s 0s infinite linear;
+}
+
+@keyframes indicator{
+    0%{
+        width: 0;
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100%{
+        width: 100%;opacity: 0;
+    }
+}

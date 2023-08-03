@@ -1,0 +1,14 @@
+{
+    "name": "CXA Pico",
+    "short_name": "CXA",
+    "icons": [
+       {
+          "src": "/public/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+       }
+    ],
+    "theme_color":"#2A2D36",
+    "background_color":"#2A2D36",
+    "display":"standalone"
+ }
